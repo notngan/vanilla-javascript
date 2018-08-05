@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+* {
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 20px;
+  text-shadow: 3px 3px rgba(0,0,0,0.3);
+   color: #ffffe6;
+}
+
+.spring { background-image: url(img/spring.jpg); }
+.summer { background-image: url(img/summer.jpg); }
+.fall { background-image: url(img/fall.jpg); }
+.winter { background-image: url(img/winter.jpg); }
+
+.spring, .summer, .fall, .winter {
+  background-size: cover;
+  background-position: center;
+}
+.panels {
+  display: flex;
+  min-height: 100vh;
+}
+.panel{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.panel > * {
+  border: #333 solid 1px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.panel p {
+  padding: 10px;
+}
+.panel p:nth-child(2) {
+  font-size: 2em;
+}
