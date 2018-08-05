@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Roboto+Slab');
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto Slab', serif;
+}
+body {
+  background-color: #333;
+  color: #222;
+  background: url('image.jpg') no-repeat;
+  background-size: cover;
+}
+.container {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #fff;
+  height: 100vh;
+}
+h1 {
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 60px;
+  background: yellow;
+  width: 520px;
+  height: 20px;
+  line-height: 20px;
+  position: relative;
+  top:20px;
+}
+
+content {
+  text-align: center;
+  display: block;
+  margin: 80px 0;
+}
+content span {
+  margin-left: 20px;
+}
+.img-container {
+  text-align: center;
+  margin: 120px;
+}
+.img-container img {
+  border: #333 10px solid;
+}
+.slider {
+    -webkit-appearance: none;
+    height: 10px;
+    background: #ddd;
+    outline: none;
+  }
+  .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      background: #555;
+      cursor: pointer;
+      border: #ccc 3px solid;
+      border-radius: 50%;
+  }
+
+  .slider::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      background: #666;
+      cursor: pointer;
+      border-radius: 50%;
+  }

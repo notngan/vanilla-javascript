@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Variables</title>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>Update CSS Variables with JS</h1>
+    <content>
+      <span>Scale:&nbsp; </span>
+      <input type="range" min="0" max="50" value="0" class="slider" id="spacing"/>
+
+      <span>Blur:&nbsp; </span>
+      <input type="range" min="0" max="10" value="0" class="slider" id="blur"/>
+
+      <span>Border color:&nbsp;</span>
+      <input type="color" min="1" max="100" value="#666666"  id="color" style="width: 100px"/>
+    </content>
+    <div class="img-container">
+      <img src="image.jpg"/>
+    </div>
+  </div>
+
+  <script>
+    let spacing = document.getElementById('spacing');
+    let blur = document.getElementById('blur');
+    let color = document.getElementById('color');
+    let image = document.querySelector('img');
+
+    function applyStyle(){
+      let spacingVal = spacing.value;
+      let blurVal = blur.value;
+      let colorVal = color.value;
+      //console.log(spacingVal);
+      image.style.transform = `scale(${1+spacingVal/100},${1+spacingVal/100})`;
+      image.style.filter = `blur(${blurVal}px)`;
+      image.style.border = `${colorVal} solid 10px`;
+    }
+    this.onchange = function(){
+      applyStyle();
+    };
+  </script>
+</body>
+</html>

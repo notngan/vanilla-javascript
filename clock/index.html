@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Clock</title>
+  <link  rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+
+<body>
+  <div class="container">
+    <div class="face">
+      <div class="second"></div>
+      <div class="minute"></div>
+      <div class="hour"></div>
+      <div id="dot"></div>
+    </div>
+    <h1></h1>
+</div>
+
+
+<script>
+let shand = document.querySelector('.second');
+let mhand = document.querySelector('.minute');
+let hhand = document.querySelector('.hour');
+let text = document.querySelector('h1');
+
+function checkTime(time) {
+    if (time < 10) {time = "0" + time};  // add zero in front of numbers < 10
+    return time;
+}
+
+function applyTime() {
+  const d = new Date();
+  const h = d.getHours();
+  const m = d.getMinutes();
+  const s = d.getSeconds();
+
+  let sdeg = s * 6;
+  let mdeg = m * 6;
+  let hdeg = h * 30 + m * 0.5;
+
+  shand.style.transform = `rotate(${sdeg}deg)`;
+  mhand.style.transform = `rotate(${mdeg}deg)`;
+  hhand.style.transform = `rotate(${hdeg}deg)`;
+
+  let m1 = checkTime(m);
+  let s1 = checkTime(s);
+
+  text.innerHTML = `${h}:${m1}:${s1}`;
+
+}
+setInterval(applyTime,1000);
+
+</script>
+
+</body>
+</html>
