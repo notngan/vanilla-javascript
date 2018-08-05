@@ -27,5 +27,22 @@
       <p>in your arms</p>
     </div>
   </div>
+
+  <script>
+
+    let panels = document.querySelectorAll('.panel');
+
+    function toggle() {
+      this.classList.toggle('toggle');
+    }
+    function active(e) {
+      if(e.propertyName.includes('flex')){
+        this.classList.toggle('open-active')
+      };
+    }
+    panels.forEach(panel => panel.addEventListener('click', toggle));
+    panels.forEach(panel => panel.addEventListener('transitionend', active));
+  </script>
+
 </body>
 </html>
